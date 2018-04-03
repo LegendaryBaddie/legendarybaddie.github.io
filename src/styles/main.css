@@ -226,11 +226,32 @@
             }
             .projectMiniBox h3{
                 font-family: 'Press Start 2P';
-                font-size: 12pt;
+                font-size: 11pt;
                 line-height: 18pt;
-                height:50px;
                 padding:5px;
-                width:375px;
+                padding-top:10px;
+                text-align: center;
+            }
+            .projectMiniBox a{
+                display:block;
+                font-family: 'Press Start 2P';
+                font-size: 13pt;
+                text-decoration: underline;
+                color:#6EA58B;
+                padding-bottom:5px;
+                cursor: pointer;
+                transition: all .1s;
+                margin-top:10px;
+                
+            }
+            .projectMiniBox a:hover{
+                color:#277650;
+            }
+            .projectMiniBox p{
+            text-align:left;
+            margin:auto;
+            margin-bottom: 40px;
+            margin-top: 20px;
             }
             /*change under 1350px width*/
             #projectMegaBox{

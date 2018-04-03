@@ -1,3 +1,5 @@
+import { data } from './projectsHtml.js';
+
 //end of drawing beginning of onclick animation swap
     const setNavBar = () =>{
             document.querySelector('#name').style.display = "none";
@@ -106,7 +108,6 @@
         setTimeout(()=>{scrollBar.style.overflowX ="visible";},600);
     }
 
-    let modalREFhash = [];
     let modalTarget;
     let modalActive=false;
     export const projectClickEvents = () =>{
@@ -125,6 +126,20 @@
                    document.querySelector('body').style.cursor = "pointer";
                    //pull from modalHTMLhash where e.dataset.type is the key
                    modalTarget=e;
+                    switch(e.dataset.type){
+                        case "pong":
+                                modalTarget.innerHTML = data.pongHTML;
+                                break;
+                        case "putton":
+                                modalTarget.innerHTML = data.puttonHTML;
+                                break;
+                        case "audio":
+                                modalTarget.innerHTML = data.audioHTML;
+                                break;
+                        case"unnamed":
+                                modalTarget.innerHTML = data.unnamedHTML;
+                                break;
+                    }
                     modalActive=true;
                 }
         });
@@ -163,6 +178,20 @@
             if(e.target.id == "modal" || e.target.id=="fancyBox"){
                 //reset everthing back
                 modalTarget.style.background="#000";
+                switch(modalTarget.dataset.type){
+                        case "pong":
+                                modalTarget.innerHTML = data.pongHTMLShort;
+                                break;
+                        case "putton":
+                                modalTarget.innerHTML = data.puttonHTMLShort;
+                                break;
+                        case "audio":
+                                modalTarget.innerHTML = data.audioHTMLShort;
+                                break;
+                        case"unnamed":
+                                modalTarget.innerHTML = data.unnamedHTMLShort;
+                                break;
+                    }
                 modalTarget.id = "";
 
                 document.querySelector("#content").style.zIndex="10001";
