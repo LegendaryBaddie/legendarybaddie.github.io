@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+        <link href="./src/styles/main.css" rel=stylesheet>
+    </head>
+    <body>
+        <canvas id=main width=2000 height=1000></canvas>
+        <div id=modal>
+            <div id=innerModal>
+            <!-- this modal has dynamic content-->
+            </div>
+        </div>
+        <div id=content class=unstyledContent>
+            <div id=fancyBox></div>
+            <div id=splitter>
+                <h1 id=name>AUSTIN WHITE</h1>
+                <ul id=navContainer>
+                <li><a id=aboutMe>ABOUT ME</a></li>
+                <li><a id=projects>PROJECTS</a></li>
+                <li><a id=otherStuff>OTHER STUFF</a></li>
+                </ul>
+            </div>
+            <!-- This is the about me page content -->
+            <div id=contentAbout class=trueContent>
+                <p>Hi, my name is Austin and I'm a game developer/web developer. I'm graduating from R.I.T. in the spring of 2018 with a Bachelors in Game Design & Development.
+                    I'm currently looking for a Co-Op to meet the final requirement for my degree, and a full time job after that.</p>
+                <p>I have experience coding in C#, C++, Swift, Javascript, HTML, CSS, Node.js. I also have experience working
+                    with Unity3d, Photoshop, Visual Studio, Arduino, and GIT.</p>
+                <p>If you want an official resume check out my Other Stuff page.</p>
+               </div>
+            <!-- This is the end of the about me, and beginning of Project page content --> 
+            <div id=contentProject class=trueContent>
+                <div id=projectMegaBox>
+                    <!-- 6 player pong, audio-viz, putton, newgame design doc?-->
+                    <div class=projectMiniBox data-type="pong"><img height=250px width=400px><h3>Networked 6 Player Pong</h3></div>
+                    <div class=projectMiniBox data-type="putton"><img height=250px width=400px><h3>Putton</h3></div>
+                    <div class=projectMiniBox data-type="audio"><img height=250px width=400px><h3>Web App- Audio Visualizer</h3></div>
+                    <div class=projectMiniBox data-type="unnamed"><img height=250px width=400px><h3>Tug-o-War</h3></div>
+                </div>
+            </div>
+            <!-- This is the end of the Project, and beginning of Other Stuff page content --> 
+            <div id=contentOther class=trueContent>
+                <h2><a href=./src/Resume.pdf>My Resume</a></h2>
+                <h2><a href=https://github.com/LegendaryBaddie>My Github</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Created by Austin White</p>
+            <p>This is a WIP</p>
+            <p><a>View this website's GIThub page</a></p>
+        </footer>
+    </body>
+    <script type=module src="./src/scripts/main.js"></script>
+</html>
