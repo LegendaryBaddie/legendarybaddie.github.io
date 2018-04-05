@@ -188,7 +188,7 @@ import { data } from './projectsHtml.js';
                         case "audio":
                                 modalTarget.innerHTML = data.audioHTMLShort;
                                 break;
-                        case"unnamed":
+                        case "unnamed":
                                 modalTarget.innerHTML = data.unnamedHTMLShort;
                                 break;
                     }
