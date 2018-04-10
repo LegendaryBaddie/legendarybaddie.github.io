@@ -2,7 +2,13 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-        <link href="./src/styles/main.css" rel=stylesheet>
+        
+        <link href="./src/styles/main.css" media=(min-width:1364px) rel=stylesheet>
+        <!--need a style sheet for size less thatn 1364px width-->
+        <link href="./src/styles/1364.css" media=(max-width:1364px) rel=stylesheet>
+        <!--need a mobile size for less than 704px width-->
+        <link href="./src/styles/844.css" media=(max-width:704px) rel=stylesheet>
+        
         <!--favicon-->
         <link rel="apple-touch-icon" sizes="180x180" href="./src/media/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./src/media/favicon-32x32.png">
@@ -13,8 +19,7 @@
         <meta name="theme-color" content="#ffffff">
         <!--end favicon-->
         
-        <!--need a style sheet for size less thatn 1364px width-->
-        <!--need a mobile size for less than 704px width-->
+        
     </head>
     <body>
         <canvas id=main width=2000 height=1000></canvas>

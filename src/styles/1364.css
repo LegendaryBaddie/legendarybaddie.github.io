@@ -141,8 +141,12 @@
                 margin:auto;
                 margin-top: 10%;
             }
+            #splitter h1{
+                font-size:65px
+            }
             #navContainer li{
-                width:700px;
+                margin-left:30px;
+                font-size:55px
             }
             .unstyledContent{
                 width:100%;
@@ -153,13 +157,13 @@
                 top:0px;
             }
             .styledContent{
-                width:80%;
+                width:100%;
                 height:100%;
                 display:block;
                 position:absolute;
                 margin:auto;
                 top:0px;
-                left:10%;
+                left:0px%;
                 opacity: 0.9;
                 background:#000;
                 box-shadow: 0px 0px 100px #000;
@@ -175,12 +179,13 @@
                 text-align: center;
                 height:30pt;  
                 margin-bottom:40px;
+                font-size:20pt;
             }
             #styledNavContainer li{
                 display:inline-block;
-                font-size:20pt;      
+                font-size:18pt;      
                 vertical-align: top;
-                margin:auto;        
+                margin:-10px;
             }
             #styledNavContainer li:hover{
                 animation: none;
@@ -189,17 +194,21 @@
                 transition: all 0.5s ease;
             }
             .currentPage{
-                font-size:30pt;
+                font-size:24pt;
                 color: #DEDFDF;
                 transition: all 0.5s;  
             }
             .trueContent{
-               
+                
                 width:80%;
                 height: fit-content;
                 color:white;
                 margin:auto;
                 transition: all 0.5s;
+            }
+            .trueContent p{
+                font-size:16pt;
+                width: 600px
             }
             #contentAbout{
                 display: none;
@@ -214,17 +223,21 @@
                 padding-top: 100px;
             }
             .projectMiniBox{
-                width:400px;
-                height:300px;
-                float:left;
+                width:300px;
+                height:200px;
                 text-align: center;
+                float:left;
                 border:3px solid #6EA58B;
                 box-shadow: 0px 0px 4px #6EA58B;
                 cursor: pointer;
-                margin:4px;
+                margin:7px;
                 background:black;
                 opacity: 1;
                 transition:box-shadow .3s;
+            }
+            .projectMiniBox img{    
+                width:300px;
+                height:150px;
             }
             .projectMiniBox:hover{
                 box-shadow: 0px 0px 15px 5px #6EA58B;
@@ -262,9 +275,8 @@
             #projectMegaBox{
                 position: relative;
                 margin:auto;
-                width:828px;
-                height:70vh;
-                padding:2%;
+                width:640px;
+                height:600px;
             }
             /*Modal*/
             #modal{
@@ -281,8 +293,8 @@
             #mainModal{
                 z-index:10011;
                 position:absolute;
-                width:840px;
-                height:550px;
+                width:600px;
+                height:500px;
                 box-shadow: 0 0 2px 2px #6EA58B ;
                 border:2px solid #DEDFDF;
                 transition: all 0.5s;
@@ -291,4 +303,13 @@
             #mainModal:hover{
             box-shadow: 0px 0px 20px 10px #6EA58B;
             border:2px solid #CCCCCC;
+            }
+            #mainModal p{
+                font-size: 14pt;
+                width:90%
+            }
+            #mainModal img{
+                width: 400px;
+                height:200px;
+                margin:5px;
             }
