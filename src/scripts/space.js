@@ -6,7 +6,7 @@ let ctx = c.getContext("2d");
     let dotspeed = 2;
     let wiggleX = 1000;
     let wiggler = 1;
-    for(let i=0; i<5000; i+=5){
+    for(let i=0; i<6000; i+=6){
         //x
        
         
@@ -15,6 +15,7 @@ let ctx = c.getContext("2d");
         dots[i+3] = (1-Math.random()*2)*(Math.random()*dotspeed+2);
         dots[i+1] = 500 + dots[i+3]*200;
         dots[i+4] = (Math.random()*100)/1000;
+        dots[i+5] = 0;
     }
    
     const assignDot = (loc) =>{
@@ -25,6 +26,7 @@ let ctx = c.getContext("2d");
         dots[loc+1] = 500;
         dots[loc+3] = (1-Math.random()*2)*(Math.random()*dotspeed+5);
         dots[loc+4] = 0;
+        dots[loc+5] = 0;
 
         if(wiggleX>=1300){
             wiggler = -0.1;
@@ -38,7 +40,7 @@ let ctx = c.getContext("2d");
         requestAnimationFrame(draw);
         ctx.clearRect(0,0,c.width,c.height);
         //update dots
-        for(let i = 0; i<5000; i+=5){
+        for(let i = 0; i<6000; i+=6){
             let x = dots[i];
             let y = dots[i+1];
             let xV = dots[i+2];
@@ -60,12 +62,17 @@ let ctx = c.getContext("2d");
             //if they are offscreen reassign;
             if((x>2000 || x<0 || y>1000 || y<0))
                 assignDot(i);
+            let scaler = dots[i+5];
             
             //draw them
             ctx.beginPath();
             ctx.fillStyle = "#fff";
             ctx.globalAlpha = dots[i+4];
-            ctx.arc(dots[i],dots[i+1],5,0,2*Math.PI);
+            ctx.arc(dots[i],dots[i+1],5*scaler,0,2*Math.PI);
             ctx.fill();
+            
+            //modify the scale;
+            scaler+=.003;
+            dots[i+5] = scaler;
         }
     }
