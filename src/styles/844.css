@@ -186,15 +186,17 @@
             #styledNavContainer{
                 width:100%;
                 text-align: center;
-                height:30pt;  
                 margin-bottom:40px;
                 font-size:20pt;
             }
             #styledNavContainer li{
-                display:inline-block;
+                display:block;
                 font-size:18pt;      
                 vertical-align: top;
-                margin:-10px;
+                
+                background:#0E0E0E;
+                margin:5px;
+                padding:5px;
             }
             #styledNavContainer li:hover{
                 animation: none;
