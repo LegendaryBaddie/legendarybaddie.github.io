@@ -113,7 +113,17 @@ import { data } from './projectsHtml.js';
     export const projectClickEvents = () =>{
         let doc = document.querySelectorAll('.projectMiniBox');
         doc.forEach((e) =>{
-
+                e.onmouseover=()=>{
+                    //access the h3 element;
+                    if(!modalActive){
+                        e.children[1].style.display="block";
+                    }
+                }
+                e.onmouseout=()=>{
+                    if(!modalActive){
+                        e.children[1].style.display="none";
+                    }
+                }
                 e.onclick=()=>{
                      e.id = "mainModal";
                     
