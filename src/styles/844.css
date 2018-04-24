@@ -1,52 +1,72 @@
 
             @keyframes slideOutToLeft{
                 0%{
-                    transform: translateX(0);
+                    transform: translate(0,0);
                 }
                 99%{
                     display:none;
+                    transform: translate(-200%,0);
                 }
                 100%{
-                    transform: translateX(-200%);
+                    transform: translate(-200%,0);
                     display: none;
                 }
             }
             @keyframes slideOutToRight{
                 0%{
-                    transform: translateX(0);
+                    transform: translate(0,0);
                 }
                 99%{
-                    transform: translateX(200%);
-                    display:none;
+                    transform: translate(200%,0);
+                    
                 }
                 100%{
-                    transform: translateX(-200%);
-                    display: none;
+                    transform: translate(200%,0);
+                  
                 }
             }
             @keyframes slideInFromRight{
                 0%{
-                    transform: translateX(200%);
+                    transform: translate(200%,0);
                 }
                 99%{
                     display:none;
+                    transform: translate(0,0);
                 }
                 100%{
-                    transform: translateX(0);
+                    transform: translate(0,0);
                     display: block;
                 }
             }
             @keyframes slideInFromLeft{
                 0%{
-                    transform: translateX(-200%);
+                    transform: translate(-200%,0);
                 }
                 99%{
                     display:none;
+                    transform: translate(0,0);
                 }
                 100%{
-                    transform: translateX(0);
+                    transform: translate(0,0);
                     display: block;
                 }
+            }
+            @keyframes fadeIn{
+                0%{
+                    opacity:0;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+            @keyframes fadeOut{
+                0%{
+                    opacity:1;
+                }
+                100%{
+                    opacity:0;
+                }
+                
             }
 
             *{
@@ -56,6 +76,13 @@
             
             body{
                 background: black;
+            }
+            #overlayCanvas{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0px;
+                left:0px;
             }
             ul{
                 position: relative;
@@ -134,7 +161,8 @@
                 text-align:center;
             }
             #splitter h1{
-                font-size:55px;
+                font-size:65px;
+                margin-bottom:60px;
             }
             #navContainer{
                 width:100%;
@@ -145,7 +173,7 @@
                 height:5%;
                 padding-top:5%;
                 margin:0px;;
-                font-size:45px;
+                font-size:50px;
                 text-align:center;
                 text-shadow: 0px 0px 5px white;
                 background:#0E0E0E;
@@ -167,13 +195,14 @@
             }
             .styledContent{
                 width:100%;
-                height:100%;
+                height:fit-content;
                 display:block;
-                position:absolute;
+                position:relative;
                 margin:auto;
+                padding-bottom:200px;
                 top:0px;
-                left:0px%;
-                opacity: 0.9;
+                left:0px;
+                opacity: 0.6;
                 background:#000;
                 box-shadow: 0px 0px 100px #000;
                 transition: all 0.5s;
@@ -191,12 +220,12 @@
             }
             #styledNavContainer li{
                 display:block;
-                font-size:18pt;      
+                font-size:40pt;      
                 vertical-align: top;
                 
                 background:#0E0E0E;
                 margin:5px;
-                padding:5px;
+                padding:25px;
             }
             #styledNavContainer li:hover{
                 animation: none;
@@ -205,20 +234,20 @@
                 transition: all 0.5s ease;
             }
             .currentPage{
-                font-size:24pt;
+                font-size:45pt;
                 color: #DEDFDF;
                 transition: all 0.5s;  
             }
             .trueContent{
-                
                 width:80%;
-                height: fit-content;
+                height: 50%;
                 color:white;
                 margin:auto;
+                margin-top:40%;
                 transition: all 0.5s;
             }
             .trueContent p{
-                font-size:16pt;
+                font-size:30pt;
                 width: 600px
             }
             #contentAbout{
@@ -227,38 +256,43 @@
             }
             #contentProject{
                 display: none;
-                overflow: auto;
+                height:1600px;
             }
             #contentOther{
                 display: none;
-                padding-top: 100px;
+                height:100%;
+                padding-top: 200px;
+                padding-bottom: 300px;
+            }
+            #contentOther h2{
+                font-size:55pt;
             }
             .projectMiniBox{
-                width:300px;
-                height:200px;
+                width:650px;
+                height:300px;
                 text-align: center;
-                float:left;
                 border:3px solid #6EA58B;
                 box-shadow: 0px 0px 4px #6EA58B;
                 cursor: pointer;
-                margin:7px;
+                margin:auto;
+                margin-bottom:20px;
                 background:black;
                 opacity: 1;
                 transition:box-shadow .3s;
             }
             .projectMiniBox img{    
-                width:300px;
-                height:150px;
+                width:500px;
+                height:250px;
             }
             .projectMiniBox:hover{
                 box-shadow: 0px 0px 15px 5px #6EA58B;
             }
             .projectMiniBox h3{
                 font-family: 'Press Start 2P';
-                font-size: 11pt;
+                font-size: 16pt;
                 line-height: 18pt;
                 padding:5px;
-                padding-top:10px;
+                padding-top:15px;
                 text-align: center;
             }
             .projectMiniBox a{
@@ -286,8 +320,8 @@
             #projectMegaBox{
                 position: relative;
                 margin:auto;
-                width:640px;
-                height:600px;
+                width:650px;
+                height:1350px;
             }
             /*Modal*/
             #modal{
@@ -304,23 +338,26 @@
             #mainModal{
                 z-index:10011;
                 position:absolute;
-                width:600px;
-                height:500px;
+                width:700px;
+                height:750px;
                 box-shadow: 0 0 2px 2px #6EA58B ;
                 border:2px solid #DEDFDF;
                 transition: all 0.5s;
-                left:11px;
+                left:-28px;
             }
             #mainModal:hover{
             box-shadow: 0px 0px 20px 10px #6EA58B;
             border:2px solid #CCCCCC;
             }
+            #mainModal a{
+                font-size:26pt;
+            }
             #mainModal p{
-                font-size: 14pt;
+                font-size: 24pt;
                 width:90%
             }
             #mainModal img{
-                width: 400px;
-                height:200px;
+                width: 600px;
+                height:300px;
                 margin:5px;
             }

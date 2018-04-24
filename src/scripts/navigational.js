@@ -1,5 +1,7 @@
 import { data } from './projectsHtml.js';
 
+//check if page is mobile;
+const mobile = /Mobi/i.test(navigator.userAgent);
 //end of drawing beginning of onclick animation swap
     const setNavBar = () =>{
             document.querySelector('#name').style.display = "none";
@@ -86,6 +88,17 @@ import { data } from './projectsHtml.js';
     // incoming new content dom reference
     
     const slideContent = (direction, old, incoming) =>{
+        if(mobile){
+            old.style.animationFillMode = "forwards";
+            old.style.animation= "0.3s linear fadeOut";
+            setTimeout(()=>{
+                old.style.display="none";
+                incoming.style.display = "block";
+                incoming.style.animationFillMode = "forwards";
+                incoming.style.animation = "0.3s linear fadeIn";
+            },300);
+            return;
+        }
         let scrollBar = document.querySelector("body");
         scrollBar.style.overflowX ="hidden";
         if(direction){
@@ -95,7 +108,7 @@ import { data } from './projectsHtml.js';
             setTimeout(()=>{old.style.display="none"},300);
             setTimeout(()=>{incoming.style.display = "block";},300);
             incoming.style.animationFillMode = "forwards";
-            incoming.style.animation = "0.2s linear slideInFromRight";
+            incoming.style.animation = "0.3s linear slideInFromRight";
         }else{
            //right 
             old.style.animationFillMode = "forwards";
@@ -134,6 +147,7 @@ import { data } from './projectsHtml.js';
                    document.querySelector('#modal').style.zIndex = "10000";
                    document.querySelector('#modal').style.opacity = ".8";
                    document.querySelector('body').style.cursor = "pointer";
+                   document.querySelector('body').style.overflow = "hidden";
                    //pull from modalHTMLhash where e.dataset.type is the key
                    modalTarget=e;
                     switch(e.dataset.type){
@@ -154,7 +168,7 @@ import { data } from './projectsHtml.js';
                 }
         });
         //modal hovering
-    
+            if(!mobile){
             document.querySelector("#fancyBox").onmouseover = () =>{
                 if(modalActive){
                 document.querySelector("#fancyBox").style.opacity="0";
@@ -183,6 +197,7 @@ import { data } from './projectsHtml.js';
                 modalTarget.style.background="#000";
                 }
             }
+            }
         
         document.onclick=(e)=>{
             if(e.target.id == "modal" || e.target.id=="fancyBox"){
@@ -208,6 +223,7 @@ import { data } from './projectsHtml.js';
                 document.querySelector("#content").style.boxShadow="none";
                 document.querySelector("#fancyBox").style="";
                 document.querySelector('body').style.cursor = "default";
+                document.querySelector('body').style.overflow = "initial";
                 modalActive=false;
             document.querySelector('#modal').style.zIndex = "-1";
             document.querySelector('#modal').style.opacity = "0";

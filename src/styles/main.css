@@ -239,6 +239,7 @@
                 padding:5px;
                 padding-top:10px;
                 text-align: center;
+                display:none;
             }
             .projectMiniBox img{
                 width:400px;
@@ -249,7 +250,6 @@
                 width:400px;
                 height:250px;
                 box-shadow:inset 5px 5px 10px 100px #FFF;
-                
             }
             .projectMiniBox a{
                 display:block;
