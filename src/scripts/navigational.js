@@ -129,11 +129,14 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                 e.onmouseover=()=>{
                     //access the h3 element;
                     if(!modalActive){
+
+                        e.children[0].style.height=`${e.children[0].offsetHeight -50} px`;
                         e.children[1].style.display="block";
                     }
                 }
                 e.onmouseout=()=>{
                     if(!modalActive){
+                        e.children[0].style.height=`${e.children[0].offsetHeight +50} px`;
                         e.children[1].style.display="none";
                     }
                 }

@@ -247,8 +247,7 @@
                 transition: all .2s;
             }
             .projectMiniBox img:hover{
-                width:400px;
-                height:250px;
+               
                 box-shadow:inset 5px 5px 10px 100px #FFF;
             }
             .projectMiniBox a{
