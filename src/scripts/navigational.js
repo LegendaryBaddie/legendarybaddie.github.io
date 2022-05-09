@@ -129,18 +129,21 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                 e.onmouseover=()=>{
                     //access the h3 element;
                     if(!modalActive){
-                        var height = e.children[0].style.height.substring(0,3);
+                        var height = e.children[0].offsetHeight;
                         console.dir(height);
-                        console.dir(e.children[0].style.height);
-                        console.dir(e.children[0]);
-                        e.children[0].style.height=`${height-50} px`;
+                        height-=50;
+                        console.dir(height);
+                        e.children[0].style.height=`${height} px`;
                         e.children[1].style.display="block";
                     }
                 }
                 e.onmouseout=()=>{
                     if(!modalActive){
-                        var height = e.children[0].style.height.substring(0,3);
-                        e.children[0].style.height=`${height+50} px`;
+                        var height = e.children[0].offsetHeight;
+                        console.dir(height);
+                        height+=50;
+                        console.dir(height);
+                        e.children[0].style.height=`${height} px`;
                         e.children[1].style.display="none";
                     }
                 }
