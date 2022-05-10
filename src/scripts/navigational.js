@@ -131,19 +131,19 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                     if(!modalActive){
                         var height = e.children[0].offsetHeight;
                         console.dir(height);
-                        height-=50;
+                        height = `${height-50}px`;
                         console.dir(height);
-                        e.children[0].style.height=`${height} px`;
+                        e.children[0].style.height=height;
                         e.children[1].style.display="block";
                     }
                 }
                 e.onmouseout=()=>{
                     if(!modalActive){
                         var height = e.children[0].offsetHeight;
-                        console.dir(height);
-                        height+=50;
-                        console.dir(height);
-                        e.children[0].style.height=`${height} px`;
+                      
+                        height = `${height+50}px`;
+                        
+                        e.children[0].style.height=height;
                         e.children[1].style.display="none";
                     }
                 }
