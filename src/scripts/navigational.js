@@ -129,12 +129,14 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                 e.onmouseover=()=>{
                     //access the h3 element;
                     if(!modalActive){
+                        console.dir(e);
                         var height = e.children[0].offsetHeight;
                         
-                        height = `${height-50}px`;
+                        height = `$250px`;
                         
                         e.children[0].style.height=height;
                         e.children[1].style.display="block";
+                        e.children[1].style.height="50px";
                     }
                 }
                 e.onmouseout=()=>{
@@ -145,6 +147,7 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                         
                         e.children[0].style.height=height;
                         e.children[1].style.display="none";
+                        e.children[1].style.height="0px";
                     }
                 }
                 e.onclick=()=>{
