@@ -130,9 +130,9 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                     //access the h3 element;
                     if(!modalActive){
                         var height = e.children[0].offsetHeight;
-                        console.dir(height);
+                        
                         height = `${height-50}px`;
-                        console.dir(height);
+                        
                         e.children[0].style.height=height;
                         e.children[1].style.display="block";
                     }
@@ -141,7 +141,7 @@ const mobile = /Mobi/i.test(navigator.userAgent);
                     if(!modalActive){
                         var height = e.children[0].offsetHeight;
                       
-                        height = `${height+50}px`;
+                        height = `300px`;
                         
                         e.children[0].style.height=height;
                         e.children[1].style.display="none";
